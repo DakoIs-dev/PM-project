@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMIR — Вход</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <button class="mobile-menu-toggle" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><img src="images/jigerwithoutbackground.png" width = "70" height = "70" alt="Logo"></a></div>
+
+        <ul class="nav-links">
+            <li><a href="article.html" class="active">Articles</a></li>
+            <li><a href="chat.html">Chat Bot</a></li>
+            <li><a href="forum.html">Forum</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <button class="icon-btn login-btn" onclick="window.location.href='login.html'">
+                <img src="images/user.png" alt="login">
+            </button>
+            <button class="icon-btn profile-btn" onclick="window.location.href='profile.html'" style="display:none;">
+                <img src="images/user.png" alt="profile">
+            </button>
+        </div>
+    </nav>
+</header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1>Вход</h1>
+            <p class="auth-subtitle">Войдите в свой аккаунт</p>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email *</label>
+                    <input type="email" id="login-email" name="email" required placeholder="example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Пароль *</label>
+                    <input type="password" id="login-password" name="password" required placeholder="Введите пароль">
+                </div>
+
+                <div id="login-message" class="auth-message"></div>
+
+                <button type="submit" class="auth-button">Войти</button>
+
+                <div class="auth-links">
+                    <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="search-overlay" class="search-overlay"></div>
+    <div id="search-modal" class="search-modal">
+        <div class="search-header">
+            <h2>Поиск товаров</h2>
+            <button id="search-close" class="search-close">&times;</button>
+        </div>
+        <div class="search-content">
+            <input type="text" id="search-input" class="search-input" placeholder="Введите название товара...">
+            <div id="search-results-count" class="search-results-count"></div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button id="cart-close" class="cart-close">&times;</button>
+        </div>
+        <div class="cart-content">
+            <div id="empty-cart-message" class="empty-cart-message">
+                <p>Ваша корзина пуста</p>
+            </div>
+            <div id="cart-items" class="cart-items"></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cart-total">0₸</span>
+            </div>
+            <button id="checkout-btn" class="checkout-button">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+    <script src="auth.js"></script>
+    <script src="search.js"></script>
+    <script>
+        // Обработка формы входа
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const messageDiv = document.getElementById('login-message');
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+
+                const result = auth.login(email, password);
+
+                if (result.success) {
+                    messageDiv.className = 'auth-message success';
+                    messageDiv.textContent = result.message;
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                } else {
+                    messageDiv.className = 'auth-message error';
+                    messageDiv.textContent = result.message;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

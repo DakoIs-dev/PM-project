@@ -1,0 +1,164 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья — JIGER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <button class="mobile-menu-toggle" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="logo">
+            <img src="images/jigerwithoutbackground.png" width="70" height="70" alt="Logo">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="article.html" class="active">Articles</a></li>
+            <li><a href="chat.html">Chat Bot</a></li>
+            <li><a href="forum.html">Forum</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <button class="icon-btn login-btn" onclick="window.location.href='login.html'">
+                <img src="images/user.png" alt="login">
+            </button>
+            <button class="icon-btn profile-btn" onclick="window.location.href='profile.html'" style="display:none;">
+                <img src="images/user.png" alt="profile">
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="article-hero">
+    <div class="hero-content">
+        <h1 id="article-title">Статья</h1>
+        <p id="article-category"></p>
+    </div>
+</section>
+
+<!-- ===== ARTICLE CONTENT ===== -->
+<section class="products">
+    <div id="article-content" style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+        Загружаем статью...
+    </div>
+
+    <br>
+    <button class="cta-button" onclick="window.location.href='article.html'">
+        ← Назад к статьям
+    </button>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Контакты</h3>
+            <ul>
+                <li><a href="tel:+77053757155">+7 705 375 7155</a></li>
+                <li><a href="mailto:jiger@mail.kz">jiger@mail.kz</a></li>
+                <li>Алматы, Абылай хана 1/1</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Мы в соцсетях</h3>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 JIGER - Fitness Coach. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="Script.js"></script>
+<script src="auth.js"></script>
+<script src="search.js"></script>
+
+<script>
+const articles = {
+    1: {
+        title: "Как начать тренироваться дома?",
+        category: "Новичкам",
+        image: "images/articleNew1.jpg",
+        text: `
+            <p>Начать тренировки дома намного проще, чем кажется. Важно не оборудование, а системность.</p>
+            <p><strong>1. Начните с базовых упражнений:</strong> приседания, отжимания, планка.</p>
+            <p><strong>2. Тренируйтесь 3 раза в неделю</strong> по 20–30 минут.</p>
+            <p><strong>3. Установите время тренировки</strong>, чтобы формировать привычку.</p>
+            <p><strong>4. Делайте разминку</strong> перед каждой тренировкой.</p>
+            <p><strong>5. Следите за техникой</strong> — она важнее скорости.</p>
+            <p>Не гонитесь за сложностью — регулярность всегда важнее.</p>
+        `
+    },
+    2: {
+        title: "Белки, жиры, углеводы — что важно?",
+        category: "Питание",
+        image: "images/articleFood.jpg",
+        text: `
+            <p>Ваше тело — двигатель, который требует правильного топлива.</p>
+            <h3>Белки</h3>
+            <p>Строительный материал для мышц.</p>
+            <ul>
+                <li>Курица, творог, яйца, рыба</li>
+                <li>Норма: <strong>1.4–1.8 г/кг веса</strong></li>
+            </ul>
+            <h3>Жиры</h3>
+            <p>Гормоны, мозг, энергия.</p>
+            <ul>
+                <li>Орехи, оливковое масло, авокадо</li>
+                <li>Избегать трансжиров</li>
+            </ul>
+            <h3>Углеводы</h3>
+            <p>Топливо для тренировок.</p>
+            <ul>
+                <li>Гречка, рис, фрукты, картофель</li>
+            </ul>
+            <p>Главное — <strong>баланс и чистая еда</strong>.</p>
+        `
+    },
+    3: {
+        title: "Как не потерять мотивацию при тренировках?",
+        category: "Психология",
+        image: "images/articlePsy1.webp",
+        text: `
+            <p>Мотивация нестабильна. Дисциплина — это то, что приносит результат.</p>
+
+            <p><strong>1. Маленькие цели:</strong> минус 1 кг или +10 отжиманий.</p>
+            <p><strong>2. Фиксируйте прогресс:</strong> фото, заметки, видео.</p>
+            <p><strong>3. Найдите тренировки, которые нравятся.</strong></p>
+            <p><strong>4. Принцип 10 минут:</strong> даже короткая тренировка лучше нуля.</p>
+            <p><strong>5. Комьюнити:</strong> ищите людей, которые поддержат путь.</p>
+
+            <p>Энергия приходит <strong>после</strong> тренировки — не до неё.</p>
+        `
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if (articles[id]) {
+    document.getElementById("article-title").textContent = articles[id].title;
+    document.getElementById("article-category").textContent = articles[id].category;
+
+    document.getElementById("article-hero").style.backgroundImage =
+        `url('${articles[id].image}')`;
+
+    document.getElementById("article-content").innerHTML = articles[id].text;
+} else {
+    document.getElementById("article-content").innerHTML = "<p>Статья не найдена.</p>";
+}
+</script>
+
+</body>
+</html>

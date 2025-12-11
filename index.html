@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIGER — Fitness Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="mobile-menu-toggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo"><img src="images/jigerwithoutbackground.png" width="70" height="70" alt="Logo"></div>
+
+            <ul class="nav-links">
+                <li><a href="article.html" class="active">Article</a></li>
+                <li><a href="chat.html">Chat Bot</a></li>
+                <li><a href="forum.html">Forum</a></li>
+            </ul>
+
+            <div class="header-icons">
+                <button class="icon-btn login-btn" aria-label="Вход" onclick="window.location.href='login.html'">
+                    <img src="images/user.png" alt="Вход">
+                </button>
+                <button class="icon-btn profile-btn" aria-label="Профиль" onclick="window.location.href='profile.html'" style="display: none;">
+                    <img src="images/user.png" alt="Профиль">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jiger</h1>
+            <h3>AI-фитнес, Только результат.</h3>
+            <p>Тренировки. Питание. Полезные статьи. Комьюнити.<br>
+            Всё в одном месте — бесплатно и просто.</p>
+            <a href="#about" class="cta-button">О НАС</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Категории</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image category-image-men"></div>
+                <h3>Forum</h3>
+                <p>Forum, communicate</p>
+                <a href="forum.html" class="category-link">ПЕРЕЙТИ →</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image category-image-women"></div>
+                <h3>Chat Bot</h3>
+                <p>Chat Bot with AI</p>
+                <a href="chat.html" class="category-link">ПЕРЕЙТИ →</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image category-image-accessories"></div>
+                <h3>Articles</h3>
+                <p>Articles</p>
+                <a href="article.html" class="category-link">ПЕРЕЙТИ →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>О проекте</h2>
+        <div style="text-align:center; margin: 1.5rem 0;">
+            <img src="images/jigerwithoutbackground.png" 
+                alt="Jiger Logo" 
+                style="width:120px; height:auto; opacity:0.9;">
+        </div>
+        <p>
+            Jiger — это веб-платформа, созданная для молодых людей, студентов и начинающих спортсменов,
+            которые хотят тренироваться и питаться правильно, но не знают, с чего начать.
+        </p>
+        <p>
+            Платформа объединяет три ключевых направления:
+        </p>
+        <ul>
+            <li><strong>AI-чат</strong> — персональные рекомендации по тренировкам и питанию.</li>
+            <li><strong>Статьи</strong> — научно-обоснованные материалы о здоровье, спорте и питании.</li>
+            <li><strong>Форум</strong> — комьюнити, где пользователи делятся опытом и задают вопросы.</li>
+        </ul>
+        <p>
+            Цель Jiger — сделать путь к здоровому образу жизни доступным, простым и мотивирующим.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><a href="tel:+77053757155">+7 705 375 7155</a></li>
+                    <li><a href="mailto:jiger@mail.kz">jiger@mail.kz</a></li>
+                    <li>Алматы, Абылай хана 1/1</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 JIGER - Fitness Coach. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+    <script src="auth.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

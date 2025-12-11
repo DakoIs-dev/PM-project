@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JIGER — Forum</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <button class="mobile-menu-toggle" aria-label="Меню"><span></span><span></span><span></span></button>
+    <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;"><img src="images/jigerwithoutbackground.png" width="70" height="70" alt="Logo"></a></div>
+    <ul class="nav-links">
+      <li><a href="article.html">Articles</a></li>
+      <li><a href="chat.html">Chat Bot</a></li>
+      <li><a href="forum.html" class="active">Forum</a></li>
+    </ul>
+    <div class="header-icons">
+      <button class="icon-btn login-btn" onclick="window.location.href='login.html'"><img src="images/user.png" alt="login"></button>
+      <button class="icon-btn profile-btn" onclick="window.location.href='profile.html'" style="display:none;"><img src="images/user.png" alt="profile"></button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" style="background-image:url('images/forum1.jpg')">
+  <div class="hero-content">
+    <h1>Форум</h1>
+    <h3>Обсуждения. Советы. Комьюнити.</h3>
+    <p>Общайся, задавай вопросы, делись прогрессом — всё в одном месте.</p>
+  </div>
+</section>
+
+<section class="products">
+  <h2>Темы форума</h2>
+
+  <div style="display:flex;gap:16px;align-items:center;margin-bottom:24px;">
+    <button class="cta-button" onclick="location.href='forum-create.html'">Создать тему +</button>
+    <input id="searchTopic" placeholder="Поиск по темам..." style="padding:10px;border:1px solid var(--border-color);border-radius:6px;flex:1;max-width:420px;">
+    <select id="sortBy" style="padding:10px;border-radius:6px;border:1px solid var(--border-color);">
+      <option value="recent">По дате (сначала новые)</option>
+      <option value="popular">По ответам (сначала больше)</option>
+    </select>
+  </div>
+
+  <div class="product-grid" id="forum-list">
+    
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Контакты</h3>
+      <ul>
+        <li><a href="tel:+77053757155">+7 705 375 7155</a></li>
+        <li><a href="mailto:jiger@mail.kz">jiger@mail.kz</a></li>
+        <li>Алматы, Абылай хана 1/1</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Мы в соцсетях</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 JIGER - Fitness Coach. Все права защищены.</p></div>
+</footer>
+
+<script src="forum.js"></script>
+</body>
+</html>
